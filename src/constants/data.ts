@@ -1,0 +1,58 @@
+const columns = [
+  { name: 'Nombre', uid: 'name' },
+  { name: 'Id', uid: 'id' },
+  { name: 'Tipo y número de documento', uid: 'document' },
+  { name: 'Correo electrónico', uid: 'email' },
+  { name: 'Teléfono', uid: 'phone' },
+  { name: 'Acciones', uid: 'actions' },
+]
+
+const users = [
+  {
+    id: 849362,
+    name: 'Tony Reichert',
+    typeDocument: 'C.C',
+    document: '123456789',
+    email: 'tony.reichert@example.com',
+    phone: '3116372332',
+    avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
+  },
+  {
+    id: 849363,
+    name: 'Zoey Lang',
+    typeDocument: 'C.C',
+    document: '123456789',
+    email: 'zoey.lang@example.com',
+    phone: '3116372332',
+    avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d',
+  },
+  {
+    id: 849364,
+    name: 'Jane Fisher',
+    typeDocument: 'C.C',
+    document: '123456789',
+    email: 'jane.fisher@example.com',
+    phone: '3116372332',
+    avatar: 'https://i.pravatar.cc/150?u=a04258114e29026702d',
+  },
+  {
+    id: 849365,
+    name: 'William Howard',
+    typeDocument: 'C.C',
+    document: '123456789',
+    email: 'william.howard@example.com',
+    phone: '3116372332',
+    avatar: 'https://i.pravatar.cc/150?u=a048581f4e29026701d',
+  },
+  {
+    id: 849366,
+    name: 'Kristen Copper',
+    typeDocument: 'C.C',
+    document: '123456789',
+    email: 'kristen.cooper@example.com',
+    phone: '3116372332',
+    avatar: 'https://i.pravatar.cc/150?u=a092581d4ef9026700d',
+  },
+]
+
+export { columns, users }
