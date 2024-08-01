@@ -1,7 +1,6 @@
 import { useCallback } from 'react'
 
 import {
-  Selection,
   Spinner,
   Table,
   TableBody,
@@ -41,14 +40,13 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
   setSelectedKeys,
   isLoading,
 }) => {
-  const handleSelectionChange = (keys: Selection) => {
-    setSelectedKeys(new Set(Array.from(keys) as string[]))
-  }
+  // const handleSelectionChange = (keys: Selection) => {
+  //   setSelectedKeys(new Set(Array.from(keys) as string[]))
+  // }
 
   const downloadPdf = (id: number) => {
-    // Replace with your actual PDF download logic
     const link = document.createElement('a')
-    link.href = `/images/Manualdemarca_compressed.pdf` // Update with the actual path to the PDF
+    link.href = `/images/Manualdemarca_compressed.pdf`
     link.download = `document_${id}.pdf`
     link.click()
   }
@@ -128,7 +126,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
     <Table
       selectionMode="multiple"
       selectedKeys={selectedKeys}
-      onSelectionChange={handleSelectionChange}
+      onSelectionChange={setSelectedKeys}
     >
       <TableHeader columns={columns}>
         {(column) => (
