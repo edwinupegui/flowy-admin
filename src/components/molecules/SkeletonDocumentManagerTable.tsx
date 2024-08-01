@@ -18,7 +18,7 @@ const SkeletonDocumentManagerTable = () => (
     </Card>
 
     {/* Main Skeleton Card */}
-    <Card className="h-[357px] w-[1125px] space-y-5 p-4" radius="lg">
+    <Card className="h-[357px] w-[1012px] space-y-5 p-4" radius="lg">
       <Skeleton className="rounded-lg">
         <div className="h-10 rounded-lg bg-default-300"></div>
       </Skeleton>
@@ -33,7 +33,7 @@ const SkeletonDocumentManagerTable = () => (
             </Skeleton>
             {[...Array(6)].map((_, index) => (
               <Skeleton key={index} className="flex rounded-lg">
-                <div className={`h-2 w-32 rounded-lg bg-default-200`}></div>
+                <div className={`h-2 w-28 rounded-lg bg-default-200`}></div>
               </Skeleton>
             ))}
             <div className="flex gap-2">

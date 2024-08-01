@@ -49,7 +49,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
     switch (columnKey) {
       case 'name':
         return (
-          <div className="flex items-center justify-start px-4">
+          <div className="flex items-center justify-start pr-4">
             <User
               avatarProps={{ radius: 'full', src: row.avatar }}
               name={row.name}
@@ -58,7 +58,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
         )
       case 'id':
         return (
-          <div className="flex flex-col px-4">
+          <div className="flex flex-col pr-4">
             <p className="text-sm font-bold capitalize text-default-400">
               {row.id}
             </p>
@@ -66,7 +66,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
         )
       case 'document':
         return (
-          <div className="flex flex-col px-4">
+          <div className="flex flex-col pr-4">
             <p className="text-sm font-bold capitalize text-default-400">
               {row.typeDocument}: {row.document}
             </p>
@@ -74,7 +74,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
         )
       case 'email':
         return (
-          <div className="flex flex-col px-4">
+          <div className="flex flex-col pr-4">
             <p className="text-sm font-bold capitalize text-default-400">
               {row.email}
             </p>
@@ -82,7 +82,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
         )
       case 'phone':
         return (
-          <div className="flex flex-col px-4">
+          <div className="flex flex-col pr-4">
             <p className="text-sm font-bold capitalize text-default-400">
               {row.phone}
             </p>
