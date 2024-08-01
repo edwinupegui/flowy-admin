@@ -2,7 +2,6 @@ import { useCallback } from 'react'
 
 import {
   Selection,
-  Spinner,
   Table,
   TableBody,
   TableCell,
@@ -32,14 +31,12 @@ interface DocumentManagerTableProps {
   rows: Rows[]
   selectedKeys: Set<string>
   setSelectedKeys: React.Dispatch<React.SetStateAction<Set<string>>>
-  isLoading: boolean
 }
 
 const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
   rows,
   selectedKeys,
   setSelectedKeys,
-  isLoading,
 }) => {
   const downloadPdf = (id: number) => {
     const link = document.createElement('a')
@@ -52,7 +49,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
     switch (columnKey) {
       case 'name':
         return (
-          <div className="flex w-64 items-center justify-start">
+          <div className="flex items-center justify-start px-4">
             <User
               avatarProps={{ radius: 'full', src: row.avatar }}
               name={row.name}
@@ -61,7 +58,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
         )
       case 'id':
         return (
-          <div className="flex w-32 flex-col">
+          <div className="flex flex-col px-4">
             <p className="text-sm font-bold capitalize text-default-400">
               {row.id}
             </p>
@@ -69,7 +66,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
         )
       case 'document':
         return (
-          <div className="flex w-32 flex-col">
+          <div className="flex flex-col px-4">
             <p className="text-sm font-bold capitalize text-default-400">
               {row.typeDocument}: {row.document}
             </p>
@@ -77,7 +74,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
         )
       case 'email':
         return (
-          <div className="flex w-64 flex-col">
+          <div className="flex flex-col px-4">
             <p className="text-sm font-bold capitalize text-default-400">
               {row.email}
             </p>
@@ -85,7 +82,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
         )
       case 'phone':
         return (
-          <div className="flex w-32 flex-col">
+          <div className="flex flex-col px-4">
             <p className="text-sm font-bold capitalize text-default-400">
               {row.phone}
             </p>
@@ -93,7 +90,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
         )
       case 'actions':
         return (
-          <div className="relative flex w-32 items-center justify-center gap-2">
+          <div className="relative flex items-center justify-center gap-2">
             <Tooltip content="Descargar PDF">
               <span
                 className="cursor-pointer text-lg text-default-400 active:opacity-50"
@@ -137,11 +134,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody
-        items={rows}
-        isLoading={isLoading}
-        loadingContent={<Spinner />}
-      >
+      <TableBody items={rows}>
         {(item) => (
           <TableRow key={item.id}>
             {(columnKey) => (
