@@ -36,8 +36,8 @@ export default function LoginPage() {
 
   return (
     <div className="flex w-full">
-      <div className="hidden h-screen w-3/5 animate-gradient-move items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 lg:flex">
-        <div className="relative size-full animate-gradient-move bg-custom-gradient">
+      <div className="hidden h-screen w-3/5 items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 lg:flex">
+        <div className="relative size-full bg-custom-gradient">
           <div className="absolute right-10 top-14">
             <Image
               priority
