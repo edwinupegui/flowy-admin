@@ -24,10 +24,16 @@ const SkeletonDocumentManagerTable = () => (
       </Skeleton>
       {[...Array(5)].map((_, rowIndex) => (
         <div key={rowIndex} className="space-y-3">
-          <div className="flex items-center gap-7 px-5">
-            {[...Array(8)].map((_, index) => (
+          <div className="flex items-center gap-4 px-5">
+            <Skeleton className="flex rounded-md">
+              <div className="size-6 rounded-md bg-default-200"></div>
+            </Skeleton>
+            <Skeleton className="flex rounded-full">
+              <div className="size-10 rounded-full bg-default-200"></div>
+            </Skeleton>
+            {[...Array(6)].map((_, index) => (
               <Skeleton key={index} className="flex rounded-lg">
-                <div className={`h-2 w-36 rounded-lg bg-default-200`}></div>
+                <div className={`h-2 w-32 rounded-lg bg-default-200`}></div>
               </Skeleton>
             ))}
             <div className="flex gap-2">
