@@ -64,8 +64,8 @@ const HomePage = () => {
   )
 
   return (
-    <div className="flex h-screen w-full items-center justify-center">
-      <div className="flex flex-col items-start">
+    <div className="flex size-full items-start justify-start p-10">
+      <div className="flex w-full flex-col items-start">
         <div className="flex w-full justify-end">
           <Button
             variant="solid"
@@ -80,12 +80,12 @@ const HomePage = () => {
         {isLoading ? (
           SkeletonDocumentManagerTable()
         ) : (
-          <div className="flex flex-col">
-            <div className="mt-5 flex gap-4">
+          <div className="mt-5 flex w-full flex-col">
+            <div className="flex flex-col gap-4">
               <div className="flex flex-col">{renderTabs()}</div>
-            </div>
-            <div className="flex w-full justify-end">
-              <Pagination isCompact showControls total={10} initialPage={1} />
+              <div className="flex w-full justify-end">
+                <Pagination isCompact showControls total={10} initialPage={1} />
+              </div>
             </div>
           </div>
         )}
