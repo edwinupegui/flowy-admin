@@ -36,15 +36,24 @@ export default function LoginPage() {
 
   return (
     <div className="flex w-full">
-      <div className="hidden h-screen w-3/5 items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 lg:flex">
-        <div className="relative size-full bg-custom-gradient">
+      <div className="relative hidden h-screen w-3/5 lg:block">
+        <div className="w-full">
+          <Image
+            fill
+            priority
+            src="/images/fondo-inicio-sesion-hd.png"
+            alt="fondo inicio sesion"
+          />
+        </div>
+        <div className="relative size-full">
           <div className="absolute right-10 top-14">
             <Image
               priority
               src="/images/logo-flowy.svg"
               alt="Logo Flowy"
-              height={400}
-              width={400}
+              height={500}
+              width={500}
+              className="w-full"
             />
           </div>
           <div className="absolute bottom-0 flex w-full justify-center">
@@ -54,19 +63,37 @@ export default function LoginPage() {
               alt="Joven Sonrienda"
               height={600}
               width={600}
+              className="w-[55%]"
             />
           </div>
         </div>
       </div>
 
-      <div className="flex h-screen w-full items-center justify-center lg:w-2/5">
-        <div className="flex w-full items-center justify-center">
+      <div className="flex h-screen w-full items-end justify-center lg:w-2/5 lg:items-center lg:bg-white">
+        <div className="w-full lg:hidden">
+          <Image
+            fill
+            priority
+            src="/images/fondo-inicio-sesion-hd.png"
+            alt="fondo inicio sesion"
+          />
+          <div className="absolute top-28 flex w-full justify-center">
+            <Image
+              priority
+              src="/images/logo-flowy.svg"
+              alt="Logo Flowy"
+              height={200}
+              width={200}
+            />
+          </div>
+        </div>
+        <div className="absolute z-10 flex h-[70%] w-[90%] items-start justify-center rounded-t-lg bg-white lg:relative lg:items-center">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex w-full flex-col justify-start gap-5 px-4 sm:w-80 sm:px-0"
+            className="flex w-full flex-col justify-start gap-5 px-5 pt-10 lg:w-80 lg:px-0 lg:pt-0"
           >
-            <h1 className="text-2xl font-bold">Iniciar sesión</h1>
-            <div className="flex w-full flex-col gap-2 sm:w-80">
+            <h1 className="text-3xl font-bold">Iniciar sesión</h1>
+            <div className="flex w-full flex-col gap-2 lg:w-80">
               <div>
                 <Input
                   type="text"
@@ -124,9 +151,11 @@ export default function LoginPage() {
                 type="submit"
                 radius="full"
                 variant="solid"
-                className="h-12 w-full bg-[#573BD5] disabled:bg-slate-400"
+                size="lg"
+                color="primary"
+                className="hover:cursor-pointer disabled:bg-default"
               >
-                <p className="text-white">Iniciar sesión</p>
+                Iniciar sesión
               </Button>
             </div>
           </form>
