@@ -63,7 +63,7 @@ export default function LoginPage() {
               alt="Joven Sonrienda"
               height={600}
               width={600}
-              className="w-[55%]"
+              className="w-3/5"
             />
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function LoginPage() {
             src="/images/fondo-inicio-sesion-hd.png"
             alt="fondo inicio sesion"
           />
-          <div className="absolute top-20 flex w-full justify-center">
+          <div className="absolute top-0 mt-10 flex w-full justify-center">
             <Image
               priority
               src="/images/logo-flowy.svg"
