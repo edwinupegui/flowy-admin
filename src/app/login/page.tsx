@@ -77,7 +77,7 @@ export default function LoginPage() {
             src="/images/fondo-inicio-sesion-hd.png"
             alt="fondo inicio sesion"
           />
-          <div className="absolute top-28 flex w-full justify-center">
+          <div className="absolute top-20 flex w-full justify-center">
             <Image
               priority
               src="/images/logo-flowy.svg"
@@ -87,7 +87,7 @@ export default function LoginPage() {
             />
           </div>
         </div>
-        <div className="absolute z-10 flex h-[70%] w-[90%] items-start justify-center rounded-t-lg bg-white lg:relative lg:items-center">
+        <div className="absolute z-10 flex h-4/5 w-[90%] items-start justify-center rounded-t-lg bg-white lg:relative lg:items-center">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex w-full flex-col justify-start gap-5 px-5 pt-10 lg:w-80 lg:px-0 lg:pt-0"
