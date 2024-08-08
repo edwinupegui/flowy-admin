@@ -43,7 +43,7 @@ export default function LoginPage() {
           <Image
             fill
             priority
-            src="/images/fondo-inicio-sesion.png"
+            src="/images/fondo-inicio-sesion.jpg"
             alt="fondo inicio sesion"
           />
         </div>
@@ -71,7 +71,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <div className="flex size-full h-screen flex-col items-center justify-center bg-[url('/images/fondo-inicio-sesion.png')] lg:w-2/5 lg:bg-none">
+      <div className="flex size-full h-screen flex-col items-center justify-center bg-[url('/images/fondo-inicio-sesion.jpg')] lg:w-2/5 lg:bg-none">
         <div className="my-10 flex w-full items-center justify-center lg:hidden">
           <Image
             priority
