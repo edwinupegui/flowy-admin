@@ -109,7 +109,6 @@ const HomePage = () => {
                 <Pagination
                   color="secondary"
                   radius="full"
-                  size="sm"
                   variant="light"
                   isCompact
                   showControls
