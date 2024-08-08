@@ -1,0 +1,179 @@
+import clsx from 'clsx'
+import { Card, Skeleton } from '@nextui-org/react'
+
+const SkeletonDocumentManagerTable = () => (
+  <div className="mt-4 flex w-full flex-col gap-5 px-10">
+    {/* Header Skeleton Card */}
+    <Card className="h-[40px] w-[347px] rounded-full">
+      <div className="flex h-full items-center justify-start gap-4">
+        <Skeleton className="ml-2 rounded-full">
+          <div className="h-[30px] w-[80px] rounded-full bg-default-300"></div>
+        </Skeleton>
+        {[...Array(2)].map((_, index) => (
+          <Skeleton key={index} className="flex rounded-lg">
+            <div className="h-2 w-24 rounded-lg bg-default-200"></div>
+          </Skeleton>
+        ))}
+      </div>
+    </Card>
+
+    {/* Main Skeleton Card */}
+    <Card className="h-auto w-full space-y-5 p-5" radius="lg">
+      <Skeleton className="rounded-lg">
+        <div className="h-10 rounded-lg bg-default-300"></div>
+      </Skeleton>
+      {[...Array(10)].map((_, rowIndex) => (
+        <div key={rowIndex} className="w-full space-y-3">
+          <div className="flex w-full items-center gap-4 px-5">
+            <div className="flex w-full items-center justify-start gap-5">
+              <Skeleton className="flex size-6 rounded-md">
+                <div className="size-6 rounded-md bg-default-200"></div>
+              </Skeleton>
+              <Skeleton className="flex rounded-full">
+                <div className="size-10 rounded-full bg-default-200"></div>
+              </Skeleton>
+            </div>
+            <div className="flex w-full items-center justify-center gap-5">
+              {[...Array(5)].map((_, index) => (
+                <Skeleton key={index} className="flex w-full rounded-lg">
+                  <div className="h-2 w-28 rounded-lg bg-default-200 xl:w-44 2xl:w-56"></div>
+                </Skeleton>
+              ))}
+            </div>
+            <div className="flex w-full justify-center gap-2">
+              {[...Array(3)].map((_, index) => (
+                <Skeleton key={index} className="flex rounded-full">
+                  <div className="size-4 rounded-full bg-default-200"></div>
+                </Skeleton>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </Card>
+
+    {/* Footer Skeleton Card */}
+    <div className="flex w-full justify-end">
+      <Card className="h-[40px] w-[347px] rounded-lg">
+        <div className="flex h-full items-center justify-center gap-4">
+          <div className="flex space-x-4">
+            <span className="text-lg font-bold text-default-200">&lt;</span>
+          </div>
+          {[...Array(9)].map((_, index) => (
+            <Skeleton key={index} className="flex rounded-lg">
+              <div
+                className={clsx(
+                  'rounded-lg bg-default-200',
+                  index === 2 ? 'size-[30px]' : 'size-3',
+                )}
+              ></div>
+            </Skeleton>
+          ))}
+          <div className="flex space-x-4">
+            <span className="text-lg font-bold text-default-200">&gt;</span>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </div>
+)
+
+const SkeletonDocumentManagerCard = () => (
+  <div className="mt-4 flex w-full flex-col gap-5 px-2">
+    {/* Header Skeleton Card */}
+    <Skeleton className="rounded-md">
+      <div className="h-[60px] w-full rounded-full bg-default-300"></div>
+    </Skeleton>
+
+    {/* Main Skeleton Card */}
+    <div className="flex flex-col gap-3">
+      {[...Array(3)].map((_, rowIndex) => (
+        <Card
+          key={rowIndex}
+          className="h-auto w-full space-y-5 p-5"
+          radius="md"
+        >
+          <div className="flex w-full justify-between">
+            <div className="flex items-center gap-4">
+              <Skeleton className="size-[40px] rounded-full">
+                <div className="size-[40px] rounded-full bg-default-300"></div>
+              </Skeleton>
+              <Skeleton className="h-2 w-32 rounded-lg">
+                <div className="h-2 w-32 rounded-lg bg-default-300"></div>
+              </Skeleton>
+            </div>
+            <Skeleton className="size-[30px] rounded-lg">
+              <div className="size-[30px] rounded-lg bg-default-300"></div>
+            </Skeleton>
+          </div>
+          <div className="flex w-full flex-col justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <Skeleton className="h-2 w-32 rounded-lg">
+                <div className="h-2 w-32 rounded-lg bg-default-300"></div>
+              </Skeleton>
+              <Skeleton className="h-2 w-32 rounded-lg">
+                <div className="h-2 w-32 rounded-lg bg-default-300"></div>
+              </Skeleton>
+            </div>
+            <Skeleton className="h-2 w-56 rounded-lg">
+              <div className="h-2 w-56 rounded-lg bg-default-300"></div>
+            </Skeleton>
+          </div>
+          <div className="mt-5 flex items-end justify-between gap-4">
+            <Skeleton className="h-2 w-32 rounded-lg">
+              <div className="h-2 w-32 rounded-lg bg-default-300"></div>
+            </Skeleton>
+            <div className="flex items-end gap-2">
+              <Skeleton className="size-[20px] rounded-full">
+                <div className="size-[20px] rounded-full bg-default-300"></div>
+              </Skeleton>
+              <Skeleton className="size-[20px] rounded-full">
+                <div className="size-[20px] rounded-full bg-default-300"></div>
+              </Skeleton>
+              <Skeleton className="size-[20px] rounded-full">
+                <div className="size-[20px] rounded-full bg-default-300"></div>
+              </Skeleton>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+
+    {/* Footer Skeleton Card */}
+    <div className="flex w-full justify-center">
+      <Card className="h-[40px] w-[347px] rounded-lg">
+        <div className="flex h-full items-center justify-center gap-4">
+          <div className="flex space-x-4">
+            <span className="text-lg font-bold text-default-200">&lt;</span>
+          </div>
+          {[...Array(9)].map((_, index) => (
+            <Skeleton key={index} className="flex rounded-lg">
+              <div
+                className={clsx(
+                  'rounded-lg bg-default-200',
+                  index === 2 ? 'size-[30px]' : 'size-3',
+                )}
+              ></div>
+            </Skeleton>
+          ))}
+          <div className="flex space-x-4">
+            <span className="text-lg font-bold text-default-200">&gt;</span>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </div>
+)
+
+const SkeletonDocumentManager = () => (
+  <>
+    <div className="block w-full md:hidden">
+      {SkeletonDocumentManagerCard()}
+    </div>
+    <div className="hidden w-full md:block">
+      {SkeletonDocumentManagerTable()}
+    </div>
+  </>
+)
+
+export default SkeletonDocumentManager

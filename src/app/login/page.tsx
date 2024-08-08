@@ -5,12 +5,14 @@ import { useRouter } from 'next/navigation'
 
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Input } from '@nextui-org/react'
 
 const formSchema = z.object({
-  user: z.string(),
-  password: z.string().regex(/^\d{8}$/, 'Debe tener como mínimo 8 caracteres.'),
+  user: z.string().min(1, 'El usuario es obligatorio.'),
+  password: z.string().min(8, 'Debe tener como mínimo 8 caracteres.'),
 })
 
 export default function LoginPage() {
@@ -41,7 +43,7 @@ export default function LoginPage() {
           <Image
             fill
             priority
-            src="/images/fondo-inicio-sesion-hd.png"
+            src="/images/fondo-inicio-sesion.png"
             alt="fondo inicio sesion"
           />
         </div>
@@ -59,7 +61,7 @@ export default function LoginPage() {
           <div className="absolute bottom-0 flex w-full justify-center">
             <Image
               priority
-              src="/images/joven-sonrienda-hd.png"
+              src="/images/joven-sonrienda.png"
               alt="Joven Sonrienda"
               height={600}
               width={600}
@@ -69,7 +71,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <div className="flex size-full h-screen flex-col items-center justify-center bg-[url('/images/fondo-inicio-sesion-hd.png')] lg:w-2/5 lg:bg-none">
+      <div className="flex size-full h-screen flex-col items-center justify-center bg-[url('/images/fondo-inicio-sesion.png')] lg:w-2/5 lg:bg-none">
         <div className="my-10 flex w-full items-center justify-center lg:hidden">
           <Image
             priority
@@ -125,9 +127,12 @@ export default function LoginPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-8"
+                  className="absolute right-3 top-8 transition-transform duration-200 ease-in-out"
                 >
-                  {showPassword ? 'Ocultar' : 'Mostrar'}
+                  <FontAwesomeIcon
+                    icon={showPassword ? faEyeSlash : faEye}
+                    className="text-gray-700"
+                  />
                 </button>
                 {formState.errors.password && (
                   <p className="text-xs text-red-600">

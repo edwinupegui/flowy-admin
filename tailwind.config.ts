@@ -46,9 +46,6 @@ const config: Config = {
           foreground: 'white',
         },
       },
-      images: {
-        login: "url('./public/images/fondo-inicio-sesion-hd.png')",
-      },
     },
   },
   plugins: [nextui()],

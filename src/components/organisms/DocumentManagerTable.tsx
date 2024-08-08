@@ -99,12 +99,12 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
                 <DownloadIcon />
               </span>
             </Tooltip>
-            <Tooltip content="Edit user">
+            <Tooltip color="success" content="Aprobar">
               <span className="cursor-pointer text-lg text-default-400 active:opacity-50">
                 <CheckIcon />
               </span>
             </Tooltip>
-            <Tooltip color="danger" content="Delete user">
+            <Tooltip color="danger" content="Denegar">
               <span className="cursor-pointer text-lg text-danger active:opacity-50">
                 <DeleteIcon />
               </span>
@@ -118,6 +118,7 @@ const DocumentManagerTable: React.FC<DocumentManagerTableProps> = ({
 
   return (
     <Table
+      color="secondary"
       selectionMode="multiple"
       selectedKeys={selectedKeys}
       onSelectionChange={(keys: Selection) =>
